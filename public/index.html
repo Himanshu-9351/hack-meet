@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="encrypto-logo.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .auth-buttons button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        /* Add your other styles here */
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background-color: #3498db;
+            color: white;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+    <title>EncryptoMeet - Home</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="encrypto-logo.png" alt="EncryptoMeet Logo">
+                <h1>EncryptoMeet</h1>
+            </div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="auth-buttons">
+                <button onclick="signInWithMetaMask()">Sign In</button>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Hack IT Sapiens</h2>
+        <h2>Welcome to EncryptoMeet</h2>
+        <p>Your Secure Blockchain Video Conferencing Solution</p>
+        <div class="cta-buttons">
+            <button id="create-meeting" onclick="generateMeetingId()">Create Meeting</button>
+            <a href="meeting.html" target="_blank" ><button id="join-meeting" >Join Meeting</button></a>
+        </div>
+        <div id="create-meeting-form" style="display: none;">
+            <input type="text" id="username" placeholder="Your Name">
+            <button id="generate-meeting-id">Generate Meeting ID</button>
+        </div>
+        <div id="meeting-id-container" style="display: none;">
+            <p>Your Meeting ID: <span id="meeting-id"></span></p>
+            <p>Password: <span id="meeting-password"></span></p>
+        </div>
+        <div id="join-meeting-form" style="display: none;">
+            <input type="text" id="meeting-id-input" placeholder="Meeting ID">
+            <input type="password" id="password-input" placeholder="Meeting Password">
+            <button id="join-meeting-button">Join Meeting</button>
+        </div>
+        <button id="start-meeting" style="display: none;">Start Meeting</button>
+    </section>
+    <section class="meeting-room" style="display: none;">
+        <h2>Meeting Room</h2>
+        <video id="local-video" autoplay></video>
+        <video id="remote-video" autoplay></video>
+        <button id="start-button">Start Meeting</button>
+        <button id="hang-up">Hang Up</button>
+        <button id="generate-link">Generate Meeting Link</button>
+        <button id="copy-link">Copy Link to Clipboard</button>
+    </section>
+    <section class="features">
+        <h2>Features</h2>
+        <table class="feature-table">
+            <tr>
+                <th>Feature</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Secure & Private</td>
+                <td>Your meetings are protected with advanced encryption.</td>
+            </tr>
+            <tr>
+                <td>Blockchain Integration</td>
+                <td>Seamless blockchain integration provides secure identity verification and transparent transactions.</td>
+            </tr>
+            <tr>
+                <td>HD Video & Audio</td>
+                <td>Experience meetings in stunning high-definition video and crystal-clear audio quality.</td>
+            </tr>
+            <tr>
+                <td>New Feature</td>
+                <td>Explore our latest feature that enhances your meeting experience.</td>
+            </tr>
+        </table>
+    </section>
+    <section class="why-choose">
+        <h2>Why Choose EncryptoMeet?</h2>
+        <p>EncryptoMeet stands out from the rest with its exceptional features designed to elevate your video conferencing experience:</p>
+        <ul>
+            <li>Unrivaled Security: Our advanced encryption ensures that your meetings are secure and private.</li>
+            <li>Blockchain Integration: Seamless integration with blockchain for secure identity verification and transparent transactions.</li>
+            <li>HD Video & Audio: Experience meetings in stunning high-definition video and crystal-clear audio quality.</li>
+            <li>New Feature: Stay ahead with our latest feature designed to enhance your overall meeting experience.</li>
+        </ul>
+    </section>
+    <section class="testimonial">
+        <h2>What Our Users Say</h2>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <p>"EncryptoMeet has revolutionized the way we conduct business meetings. The security and transparency are unparalleled."</p>
+                <p class="user-name">John Doe, CEO of XYZ Corp</p>
+            </div>
+
+            <div class="mySlides">
+                <p>"The HD video quality provided by EncryptoMeet is outstanding. It truly feels like being in the same room with others."</p>
+                <p class="user-name">Jane Smith, CTO of ABC Tech</p>
+            </div>
+            <!-- Add more slides as needed -->
+
+            <!-- Navigation dots -->
+            <div style="text-align: center; margin-top: 20px;">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <!-- Add more dots as needed -->
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <h2>Get Started Today</h2>
+        <p>Join the future of secure and transparent video conferencing. Create your first meeting or join an existing one now.</p>
+        <div class="cta-buttons">
+            <button id="create-meeting">Create Meeting</button>
+            <button id="join-meeting">Join Meeting</button>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 EncryptoMeet. # Hack IT Sapiens # All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
+    <script>
+        function generateMeetingId() {
+            const meetingId = generateRandomID(8); // You can adjust the length as needed
+            const meetingPassword = generateRandomPassword(6);
+    
+            // Display the meeting ID and password
+            document.getElementById("meeting-id").textContent = meetingId;
+            document.getElementById("meeting-password").textContent = meetingPassword;
+            document.getElementById("meeting-id-container").style.display = "block";
+            document.getElementById("create-meeting-form").style.display = "none";
+            document.getElementById("start-meeting").style.display = "block"; // Show the "Start Meeting" button
+        }
+    
+        // Function to generate a random ID
+        function generateRandomID(length) {
+            let result = '';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+    
+        // Function to generate a random password
+        function generateRandomPassword(length) {
+            let result = '';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+    </script>
+    
+
+
+    <script>
+        // Your JavaScript code goes here
+        async function signInWithMetaMask() {
+        if (!checkMetaMask()) {
+            return;
+        }
+
+        try {
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            const userAddress = accounts[0];
+
+            alert(`Successfully signed in with Ethereum address: ${userAddress}`);
+
+            // Send the userAddress to your server for authentication
+            await sendUserAddressToServer(userAddress);
+        } catch (error) {
+            console.error(error);
+            alert("Error signing in with MetaMask. Please try again.");
+        }
+    }
+
+    async function sendUserAddressToServer(userAddress) {
+        try {
+            const response = await fetch('http://localhost:3000/authenticate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userAddress }),
+            });
+
+            const data = await response.json();
+            console.log(data); // You can handle the server's response as needed
+        } catch (error) {
+            console.error('Error sending userAddress to server:', error);
+        }
+    }
+
+    function checkMetaMask() {
+        if (typeof window.ethereum !== 'undefined') {
+            return true;
+        }
+        alert("MetaMask is not installed. Please install MetaMask to proceed.");
+        return false;
+    }
+    </script>
+</body>
+</html>

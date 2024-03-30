@@ -1,0 +1,120 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #ecf0f1;
+    padding: 15px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.menu a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+    color: #e74c3c; /* Change color on hover */
+}
+
+/* Pricing page styles */
+.pricing {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.plan-details {
+    max-width: 300px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.plan-price {
+    text-align: center;
+}
+
+.price-inr {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .pricing {
+        padding: 30px 15px;
+    }
+}

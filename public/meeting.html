@@ -1,0 +1,72 @@
+<!-- meeting.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryptomeet Room</title>
+</head>
+<body>
+    <video id="local-video" autoplay muted></video>
+    <video id="remote-video" autoplay></video>
+    <button id="hang-up">Hang Up</button>
+
+    <script>
+        // JavaScript code for WebRTC functionality
+
+        // Function to start a call
+        function startCall() {
+            // Send a request to the Go backend to start the call
+            fetch('/start-call', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    // Add any data needed to start the call
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to start call');
+                }
+                // Handle successful response (if needed)
+            })
+            .catch(error => {
+                console.error('Error starting call:', error);
+            });
+        }
+
+        // Function to hang up the call
+        function hangUp() {
+            // Send a request to the Go backend to hang up the call
+            fetch('/hang-up', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    // Add any data needed to hang up the call
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to hang up call');
+                }
+                // Handle successful response (if needed)
+            })
+            .catch(error => {
+                console.error('Error hanging up call:', error);
+            });
+        }
+
+        // Event listener for start button click
+        document.getElementById('startButton').addEventListener('click', startCall);
+
+        // Event listener for hangup button click
+        document.getElementById('hangupButton').addEventListener('click', hangUp);
+    </script>
+    <script src="meeting.js"></script>
+</body>
+</html>

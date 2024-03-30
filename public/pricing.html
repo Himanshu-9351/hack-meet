@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="price.css">
+    <link rel="icon" href="encrypto-logo.png" type="image/png">
+    <style>
+        /* Additional styling specific to the pricing page */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .pricing {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .plan-details {
+            max-width: 300px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .plan-price {
+            text-align: center;
+        }
+
+        .price-inr {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 768px) {
+            .pricing {
+                padding: 30px 15px;
+            }
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #ecf0f1;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+    <title>EncryptoMeet - Pricing</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="encrypto-logo.png" alt="EncryptoMeet Logo">
+                <h1>EncryptoMeet</h1>
+            </div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="pricing">
+        <h2>Pricing Plans</h2>
+        <table>
+            <tr>
+                <th>Free Plan</th>
+                <th>Business Plan</th>
+                <th>Enterprise Plan</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="plan-details">
+                        <h3>Free Plan</h3>
+                        <p>Perfect for small teams and personal use.</p>
+                        <ul>
+                            <li>Up to 10 participants</li>
+                            <li>Basic Features</li>
+                            <li>Blockchain Security</li>
+                            <li>24/7 Support</li>
+                            <li>Text Chat</li>
+                        </ul>
+                    </div>
+                    <div class="plan-price">
+                        <p>Price: <span class="price-inr">₹0</span>/month</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="plan-details">
+                        <h3>Business Plan</h3>
+                        <p>Great for growing businesses and larger teams.</p>
+                        <ul>
+                            <li>Up to 50 participants</li>
+                            <li>Advanced Features</li>
+                            <li>Blockchain ID Verification</li>
+                            <li>24/7 Support</li>
+                            <li>HD Video & Audio</li>
+                        </ul>
+                    </div>
+                    <div class="plan-price">
+                        <p>Price: <span class="price-inr">₹999</span>/month</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="plan-details">
+                        <h3>Enterprise Plan</h3>
+                        <p>Customized solutions for large enterprises.</p>
+                        <ul>
+                            <li>Unlimited Participants</li>
+                            <li>Premium Features</li>
+                            <li>Smart Contract Integration</li>
+                            <li>24/7 Priority Support</li>
+                            <li>Custom Branding</li>
+                        </ul>
+                    </div>
+                    <div class="plan-price">
+                        <p>Price: Custom</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 EncryptoMeet. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
